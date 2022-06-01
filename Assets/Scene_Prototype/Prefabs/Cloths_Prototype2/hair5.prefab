@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bffa3eff4629c264babbc5d30396305d, type: 2}
+  - {fileID: 2100000, guid: a74c3cbd1a970974f969181d4e33942f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,6 +99,10 @@ MonoBehaviour:
   _speed: 8
   _ID: 2
   _style: 4
+  interpolationFramesCount: 20
+  elapsedFrames: 0
+  _shrink: 0
+  _endPos: {x: 0, y: 0, z: 0}
 --- !u!64 &1087730171747762602
 MeshCollider:
   m_ObjectHideFlags: 0

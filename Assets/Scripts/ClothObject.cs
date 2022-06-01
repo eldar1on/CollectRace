@@ -37,24 +37,6 @@ public class ClothObject : MonoBehaviour
     public void Update()
     {
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
-        /*
-        if (_shrink)
-        {
-            float interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
-
-            Vector3 interpolatedPos = Vector3.Lerp(transform.position, _endPos, interpolationRatio);
-
-            if (elapsedFrames == interpolationFramesCount)
-            {
-                _shrink = false;
-            }
-
-            elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);
-            transform.localPosition = interpolatedPos;
-        }
-        */
-
-
     }
 
     void OnTriggerEnter(Collider other)

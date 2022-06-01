@@ -17,18 +17,13 @@ public class TargetSuit : MonoBehaviour
 
     public GameObject[] _particle;
 
+    public GameObject _dispersion;
 
     public void MakeActive()
     {
         print("Activated");
         StartCoroutine("CatWalkOut", 1f);
     }
-
-    public void DidWell()
-    {
-        
-    }
-
 
     public void ChangePart(ClothObject _clothObj)
     {
@@ -54,6 +49,7 @@ public class TargetSuit : MonoBehaviour
                 _parts[3].ChangeSuit(_clothObj._ID);
                 break;
             case ClothObject.DressType.Hair:
+                _dispersion.SetActive(false);
                 _parts[4].ChangeSuit(_clothObj._ID);
                 break;
             default:
@@ -80,20 +76,15 @@ public class TargetSuit : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        yield return null;
     }
-
 
     bool correctSuitCombination()
     {
         correctCount = 0;
 
-
         for (int i = 0; i < _correctIndex.Length; i++)
         {
             _dressed[i] = _correctIndex[i] == _parts[i].currentSuitID ? true : false;
-            
             if (_dressed[i] == false)
             {
                 correctCount--;
@@ -105,7 +96,6 @@ public class TargetSuit : MonoBehaviour
         {
             _particle[0].SetActive(true);
             _animator.SetTrigger("Walk");
-            DidWell();
             return true;
         }
         else if(correctCount > lastCorrectCount)
@@ -122,7 +112,6 @@ public class TargetSuit : MonoBehaviour
             _particle[1].SetActive(true);
             //_animator.SetTrigger("Sad");
             _animator.Play("Lose");
-
             return false;
         }
     }

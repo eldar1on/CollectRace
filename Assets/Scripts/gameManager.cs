@@ -50,6 +50,7 @@ public class gameManager : MonoBehaviour
         {
             roundStarted = true;
             startUI.SetActive(false);
+            _animController.SetTrigger("Show");
         }
     }
 

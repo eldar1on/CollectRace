@@ -59,16 +59,16 @@ public class PlayerCostume : MonoBehaviour
 
     public void SendClothes()
     {
-        //foreach (var element in _parts)
-        //{
-        //    element.Deliver();
-        //}
-
-        _parts[0].Deliver();
+        for (int i = 0; i < _parts.Length; i++)
+        {
+            _parts[i].Deliver();
+        }
+        /*
         _parts[1].Deliver();
         _parts[2].Deliver();
         _parts[3].Deliver();
         _parts[4].Deliver();
+        */
         ClearCostume();
     }
 
